@@ -128,6 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# heroku
-Procfile
+# data
 cucumbers.yml

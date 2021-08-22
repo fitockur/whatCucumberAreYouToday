@@ -1,6 +1,5 @@
-import requests
 from bs4 import BeautifulSoup
-
+import requests
 
 def cucumber_scrapper(url='https://stroy-podskazka.ru/ogurec/sorta/'):
     response = requests.get(url)

@@ -1,9 +1,6 @@
-from flask import Flask, request, jsonify
-from cucumber_scrapper import cucumber_scrapper
-import yaml
+from app import app, cucumbers
+from flask import request, jsonify
 
-
-app = Flask(__name__)
 
 @app.route('/getmsg/', methods=['GET'])
 def respond():
@@ -30,19 +27,11 @@ def respond():
 
 @app.route('/cucumbers/')
 def get_cucumbers():
-    with open('cucumbers.yml', 'r', encoding='utf-8') as f:
-        cucumbers = yaml.safe_load(f)
-
-    # Return the response in json format
+    # Return the cucumbers
     return jsonify(cucumbers)
 
 # A welcome message to test our server
 @app.route('/')
+@app.route('/index/')
 def index():
     return "Welcome to our server !!"
-
-if __name__ == '__main__':
-    with open('cucumbers.yml', 'w', encoding='utf-8') as f:
-        yaml.safe_dump(cucumber_scrapper(), f)
-    # Threaded option to enable multiple instances for multiple user access support
-    app.run(threaded=True, port=5000)
