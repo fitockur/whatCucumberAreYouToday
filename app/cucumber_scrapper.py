@@ -7,10 +7,8 @@ def cucumber_scrapper(url='https://stroy-podskazka.ru/ogurec/sorta/'):
 
     alphabet_groups = soup.find_all('div', class_='alphabet__group')
 
-    cucumbers = {}
+    cucumbers = []
     for alphabet_group in alphabet_groups:
-        alphabet = alphabet_group.find('div', class_='hl').text
-        cucumbers[alphabet] = {}
         for cucumber in alphabet_group.find_all('a', class_='perelink_gallery_item_sorta'):
-            cucumbers[alphabet][cucumber.img['alt']] = cucumber.img['src']
+            cucumbers.append(dict(name=cucumber.img['alt'], link=cucumber.img['src']))
     return cucumbers
