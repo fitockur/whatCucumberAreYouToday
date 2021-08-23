@@ -1,37 +1,16 @@
 from app import app, cucumbers
-from flask import request, jsonify
+from app.forms import CucumberForm
+from flask import render_template
 
 
-@app.route('/getmsg/', methods=['GET'])
-def respond():
-    # Retrieve the name from url parameter
-    name = request.args.get("name", None)
-
-    # For debugging
-    print(f"got name {name}")
-
-    response = {}
-
-    # Check if user sent a name at all
-    if not name:
-        response["ERROR"] = "no name found, please send a name."
-    # Check if the user entered a number not a name
-    elif str(name).isdigit():
-        response["ERROR"] = "name can't be numeric."
-    # Now the user entered a valid name
-    else:
-        response["MESSAGE"] = f"Welcome {name} to our awesome platform!!"
-
-    # Return the response in json format
-    return jsonify(response) 
-
-@app.route('/cucumbers/')
+@app.route('/cucumbers-1337/')
 def get_cucumbers():
     # Return the cucumbers
-    return jsonify(cucumbers)
+    return render_template('cucumbers.html', cucumbers=cucumbers)
 
 # A welcome message to test our server
 @app.route('/')
 @app.route('/index/')
 def index():
-    return "Welcome to our server !!"
+    form = CucumberForm()
+    return render_template('index.html', name='Nikita', form=form)
