@@ -9,7 +9,7 @@ def get_cucumber(cucumber):
         href_cucumber = cucumber['href']
         response = requests.get(url + href_cucumber)
         soup = BeautifulSoup(response.text, 'lxml').find('div', {'class': 'tabs-item', 'id': 'tab-description'})
-        text = '-'
+        text = 'Огуречик без описания'
         if soup.find('div', class_='text') is not None:
             text = soup.find('div', class_='text').text
         name = cucumber.img['alt']
