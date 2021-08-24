@@ -1,6 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
+    {% if cucumber_flag %}
+        <h1>{{ cucumber_name }}</h1>
+        <div>
+            <div>
+                <img src={{ cucumber_url }} style="max-height: 500px; max-width: 400px;" alt={{ cucumber_name }}>
+            </div>
+            <div>
+                <h2>Основные характеристики сорта:</h2>
+                {{ cucumber_desc | safe}}
+            </div>
+            <div>
+                <p>{{ cucumber_text }}</p>
+            </div>
+        </div>
+    {% endif %}
     <form method="post" action="" novalidate>
         {{ form.hidden_tag() }}
         <p>
