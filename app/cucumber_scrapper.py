@@ -10,10 +10,10 @@ def get_cucumber(cucumber):
         response = requests.get(url + href_cucumber)
         soup = BeautifulSoup(response.text, 'lxml').find('div', {'class': 'tabs-item', 'id': 'tab-description'})
         text = 'Огуречик без описания'
-        if soup.find('div', class_='text') is not None:
-            text = soup.find('div', class_='text').text
-        name = cucumber.img['alt']
-        img_link = cucumber.img['src']
+        if soup.find_next('div', class_='text') is not None:
+            text = soup.find_next('div', class_='text').text
+        name = soup.find_previous('h1').text
+        img_link = soup.find_next('img')['src']
         description = str(soup.find(text='Основные характеристики сорта:').parent.parent.find_next().find_next())
         return text, name, img_link, description
 

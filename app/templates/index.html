@@ -4,23 +4,25 @@
     {% if cucumber_flag %}
         <h1>{{ cucumber_name }}</h1>
         <div>
-            <div>
+            <div style="float: left;">
                 <img src={{ cucumber_url }} style="max-height: 500px; max-width: 400px;" alt={{ cucumber_name }}>
             </div>
-            <div>
+            <div style="float: right;">
                 <h2>Основные характеристики сорта:</h2>
                 {{ cucumber_desc | safe}}
             </div>
-            <div>
+            <div style="clear: both;">
                 <p>{{ cucumber_text }}</p>
             </div>
         </div>
-        <form method="post" action="" novalidate>
-            {{ form.hidden_tag() }}
-            <p>
-                {{ form.submit }}
-            </p>
-        </form>
+        <div style="clear: both;">
+            <form method="post" action="" novalidate>
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.submit }}
+                </p>
+            </form>
+        </div>
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Я – {{ cucumber_name }}. А какой огурчик сегодня ты?" data-hashtags="WhatCucumberAreYouToday" data-lang="ru" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     {% else %}
         <form method="post" action="" novalidate>
