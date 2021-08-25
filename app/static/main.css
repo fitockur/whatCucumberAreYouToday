@@ -1,3 +1,14 @@
+:root {
+  --bg-img: url('/static/favicon.svg') top 40px left 40px / 120px repeat;
+  --t-white: rgba(255, 255, 255, 0.90);
+  --bg-t-white: linear-gradient(var(--t-white), var(--t-white));
+  --t-black: rgba(0, 0, 0, 0.95);
+  --bg-t-black: linear-gradient(var(--t-black), var(--t-black));
+
+  --light: rgb(218, 218, 218);
+  --dark: rgb(27, 27, 27);
+}
+
 html,
 body {
   height: 100%;
@@ -6,11 +17,15 @@ body {
 body {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
+  background-color: var(--light);
+  background: var(--bg-t-white), var(--bg-img), #ffffff;
+  color: var(--dark);
 }
 
 body[data-theme='dark-theme'] {
-  background-color: rgb(27, 27, 27);
-  color: rgb(218, 218, 218);
+  background-color: var(--dark);
+  background: var(--bg-t-black), var(--bg-img), #159208;
+  color: var(--light);
 }
 
 a {
@@ -60,7 +75,7 @@ label:after {
   left: 3px;
   width: 24px;
   height: 24px;
-  background: #fff;
+  background: #ffffff;
   border-radius: 25px;
   transition: 0.3s;
 }
