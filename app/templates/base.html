@@ -1,17 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-      <title>WCAYT by @kozyre4ek</title>
-      <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:site" content="WCAYT">
-      <meta name="twitter:creator" content="@kozyre4ek">
-      <meta name="twitter:title" content="WhatCucumberAreYouToday">
-      <meta name="twitter:description" content="А какой огурчик сегодня ты?">
-      {% block meta %}{% endblock %}
-    </head>
-    <body>
-        <div>by: <a href="https://twitter.com/kozyre4ek">Ян НахтигалЪ (@kozyre4ek)</a></div>
-        <hr>
-        {% block content %}{% endblock %}
-    </body>
+  <head>
+    <title>WCAYT by @kozyre4ek</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="WCAYT" />
+    <meta name="twitter:creator" content="@kozyre4ek" />
+    <meta name="twitter:title" content="WhatCucumberAreYouToday" />
+    <meta name="twitter:description" content="А какой огурчик сегодня ты?" />
+    {% block meta %}{% endblock %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100;200;400;500&family=Comfortaa:wght@300;400&family=Fira+Sans+Condensed:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="/static/main.css" />
+    <link rel="stylesheet" href="/static/content.css" />
+  </head>
+  <body>
+    <div class="toolbar">
+      <div class="author">
+        by <a href="https://twitter.com/kozyre4ek">Ян НахтигалЪ (@kozyre4ek)</a>
+      </div>
+
+      <div class="theme">
+        <input class="toggler" type="checkbox" id="ThemeToggler" /><label
+          for="ThemeToggler"
+          >Toggle dark theme</label
+        >
+      </div>
+    </div>
+
+    {% block content %}{% endblock %}
+  </body>
 </html>
