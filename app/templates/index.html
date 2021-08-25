@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block meta %}
+<meta name="twitter:image" content="{{ cucumber_url }}">
+{% endblock %}
+
 {% block content %}
     {% if cucumber_flag %}
         <h1>{{ cucumber_name }}</h1>
@@ -23,7 +27,7 @@
                 </p>
             </form>
         </div>
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Я – {{ cucumber_name }}. А какой огурчик сегодня ты?" data-hashtags="WhatCucumberAreYouToday" data-lang="ru" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Я – {{ cucumber_name }}. А какой огурчик сегодня ты?" data-hashtags="WhatCucumberAreYouToday" data-lang="ru" data-show-count="false" data-size="large" url="www.what-cucumber-are-you-today.xyz">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     {% else %}
         <form method="post" action="" novalidate>
             {{ form.hidden_tag() }}
