@@ -154,8 +154,6 @@
 @media only screen and (max-width: 600px) {
   .content {
     grid-template-columns: 1fr;
-    padding: 1em 1.2em;
-    display: grid;
     grid-template-areas:
       'actions'
       'title'
