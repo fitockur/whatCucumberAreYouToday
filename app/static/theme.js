@@ -25,10 +25,12 @@ function setTheme(theme) {
 }
 
 const toggler = document.getElementById('ThemeToggler');
-const savedTheme = localStorage.getItem('theme');
+const savedTheme = parseInt(localStorage.getItem('theme'), 10);
 
 if (savedTheme) {
   setTheme(DARK_THEME);
+} else {
+  setTheme(LIGHT_THEME);
 }
 
 toggler.checked = savedTheme;

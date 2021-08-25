@@ -37,18 +37,18 @@
   </figure>
 
   <div class="properties">{{ cucumber_desc | safe}}</div>
+
+  <script async src="https://platform.twitter.com/widgets.js"></script>
 </section>
 
-<script
-  async
-  src="https://platform.twitter.com/widgets.js"
-  charset="utf-8"
-></script>
-
-<script async src="/static/theme.js"></script>
 {% else %}
-<form method="post" action="" novalidate>
-  {{ form.hidden_tag() }}
-  <p>{{ form.submit }}</p>
-</form>
+<div class="default-state">
+  <h1 class="default-title">
+    Нажми на огурчики ниже, чтобы узнать какой из них сегодня ты
+  </h1>
+  <form method="post" action="" novalidate>
+    {{ form.hidden_tag() }}
+    <span class="cucumbers-button">{{ form.submit }}</span>
+  </form>
+</div>
 {% endif %} {% endblock %}
