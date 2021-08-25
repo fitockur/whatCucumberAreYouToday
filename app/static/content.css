@@ -26,7 +26,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(/static/assets/cucumbers.png);
+  background-image: url(/static/cucumbers.png);
 }
 
 .content {
@@ -101,12 +101,12 @@
   position: relative;
   box-sizing: border-box;
   background-color: #45c95b;
-  color: #fff;
+  color: #ffffff;
   font-weight: 500;
   cursor: pointer;
   height: 28px;
   border-radius: 4px;
-  padding: 1px 10px 1px 9px;
+  padding: 1px 10px;
 }
 
 .share-button input:hover {

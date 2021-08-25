@@ -5,7 +5,7 @@ from config import Config
 
 cucumbers = None
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='./static')
 with app.app_context():
     cucumbers = cucumber_scrapper()
 
