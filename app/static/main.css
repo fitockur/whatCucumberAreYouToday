@@ -1,5 +1,5 @@
 :root {
-  --bg-img: url('/static/favicon.svg') top 40px left 40px / 120px repeat;
+  --bg-img: url('/static/favicon.svg') top left / 120px repeat;
   --t-white: rgba(255, 255, 255, 0.90);
   --bg-t-white: linear-gradient(var(--t-white), var(--t-white));
   --t-black: rgba(0, 0, 0, 0.95);
