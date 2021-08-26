@@ -24,8 +24,20 @@ body {
 
 body[data-theme='dark-theme'] {
   background-color: var(--dark);
-  background: var(--bg-t-black), var(--bg-img), #159208;
+  background: linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.90)),
+              var(--bg-img), #159208;
   color: var(--light);
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'actions'
+      'title'
+      'preview'
+      'properties';
+  }
 }
 
 a {
