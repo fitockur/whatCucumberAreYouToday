@@ -28,6 +28,13 @@ body[data-theme='dark-theme'] {
   color: var(--light);
 }
 
+@media only screen and (max-width: 600px) {
+  body[data-theme='dark-theme'] {
+    background: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)),
+                var(--bg-img), #159208;
+  }
+}
+
 a {
   text-decoration: none;
   color: #00acee;
